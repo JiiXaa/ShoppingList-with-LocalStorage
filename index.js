@@ -64,7 +64,7 @@ function setLocalStorage() {
 function getLocalStorage() {
   // Pull items from localStorage
   const lsItems = JSON.parse(localStorage.getItem('items'));
-  if (lsItems.length) {
+  if (lsItems.length > 0 && !lsItems === null) {
     items.push(...lsItems);
     list.dispatchEvent(new CustomEvent('itemsUpdated'));
   }
